@@ -778,37 +778,67 @@ export const politicalProfile: PoliticalProfile = {
   ],
   publicActivities: [
     {
-      id: 'pa-1',
+      id: 'pa-kanalt-2026',
       date: '23 Ekim 2026',
       title: {
-        tr: 'Bağımsız Gazetesi / Web TV Siyasi Vizyon Yayını',
-        en: 'Bağımsız Gazetesi / Web TV Political Vision Broadcast',
+        tr: 'Kanal T Kıbrıs · Siyaset ve Kadın Canlı Yayını',
+        en: 'Kanal T Cyprus · Politics & Women Live Broadcast',
       },
-      organization: 'Bağımsız Gazetesi & TAM Parti Girne',
+      organization: 'Kanal T Kıbrıs',
       summary: {
-        tr: 'Emine İkiz Leblebicioğlu, TAM Parti Girne Milletvekili Aday Adayı olarak katıldığı özel yayında yerel kalkınma, kadının güçlenmesi ve şeffaf yönetim hedeflerini paylaştı.',
-        en: 'In a dedicated broadcast as TAM Party Kyrenia nominee, Emine İkiz Leblebicioğlu detailed priorities on regional economic vibrancy, female empowerment, and institutional governance.',
+        tr: 'Kanal T ekranlarında canlı yayınlanan "Siyaset ve Kadın" programına konuk olan Emine İkiz Leblebicioğlu; TAM Parti Girne Milletvekili Adayı olarak kadın temsiliyeti, toplumsal adalet ve yerel kalkınma vizyonunu paylaştı.',
+        en: 'Appearing live on Kanal T’s "Politics and Women" program, Emine İkiz Leblebicioğlu outlined her vision on female leadership, civic justice, and regional revitalization as TAM Party candidate.',
       },
-      sourceUrl: 'https://bagimsiz.com',
+      sourceUrl: 'https://www.youtube.com/live/27Qpz0ipjqw',
       type: 'broadcast',
     },
     {
-      id: 'pa-2',
+      id: 'pa-kibristv-gunortasi',
+      date: 'Güncel Yayın Kuşağı',
+      title: {
+        tr: 'Kıbrıs TV · Gün Ortası Canlı Yayın Değerlendirmesi',
+        en: 'Kıbrıs TV · Midday Live Economic Analysis',
+      },
+      organization: 'Kıbrıs TV',
+      summary: {
+        tr: 'Kıbrıs TV Gün Ortası kuşağında Emine Leblebicioğlu; taşınmaz değerleme esasları, piyasa şeffaflığı ve Kıbrıs Türk ekonomisinin güncel meselelerini kapsamlı şekilde ele aldı.',
+        en: 'Featured on Kıbrıs TV’s Midday broadcast, Emine Leblebicioğlu delivered an in-depth analysis on property valuation benchmarks, market transparency, and contemporary economic topics.',
+      },
+      sourceUrl: 'https://www.youtube.com/live/x2ZZBaJbvZE',
+      type: 'broadcast',
+    },
+    {
+      id: 'pa-kibristv-detay',
+      date: '27 Nisan 2023',
+      title: {
+        tr: 'Kıbrıs TV · Detay Programı Özel Yayını',
+        en: 'Kıbrıs TV · Detay Feature Program',
+      },
+      organization: 'Kıbrıs TV',
+      summary: {
+        tr: 'Kıbrıs TV ekranlarında yayınlanan Detay programında Emine Leblebicioğlu; taşınmaz mal değerleme uzmanlığı, bağımsız ekspertiz kriterleri ve mülkiyet güvenliği üzerine değerlendirmelerde bulundu.',
+        en: 'Interviewed on Kıbrıs TV’s "Detay" program, Emine Leblebicioğlu addressed independent real estate valuation discipline, objective criteria, and title deed security.',
+      },
+      sourceUrl: 'https://youtu.be/6HDlphK8rrM',
+      type: 'broadcast',
+    },
+    {
+      id: 'pa-cumhurbaskanligi-tatar',
       date: '30 Haziran 2025',
       title: {
         tr: 'Cumhurbaşkanlığı Makamı Resmî Kabulü & Sektörel İstişare',
         en: 'Presidential Official Audience & Sectoral Consultation',
       },
-      organization: 'KKTC Cumhurbaşkanlığı & Kıbrıs Türk Taşınmaz Mal Değerlendirme Uzmanları Derneği',
+      organization: 'KKTC Cumhurbaşkanlığı & Döviz Haberleri',
       summary: {
-        tr: 'Cumhurbaşkanı Ersin Tatar ile taşınmaz piyasasında mülkiyet güvenliği, değerleme standartları ve sektörel mevzuat konularında heyet görüşmesi gerçekleştirildi.',
-        en: 'Participated in the official delegation audience with President Ersin Tatar addressing title integrity, objective valuation frameworks, and real estate legislations.',
+        tr: 'Cumhurbaşkanı Ersin Tatar, Kıbrıs Türk Taşınmaz Mal Değerlendirme Uzmanları Derneği heyetini kabul etti. Görüşmede taşınmaz piyasasında değerleme standartları, mülkiyet güvenliği ve yasal mevzuat müzakere edildi.',
+        en: 'President Ersin Tatar received the executive delegation of the Property Valuation Experts Association, discussing valuation criteria, property security, and regulatory updates.',
       },
-      sourceUrl: 'https://haberkibris.com/cumhurbaskani-tatar-kibris-turk-tasinmaz-mal-degerlendirme-uzmanlari-dernegini-kabul-etti-1840-2025-06-30.html',
+      sourceUrl: 'https://www.dovizhaberleri.com/genel/kibris-turk-tasinmaz-mal-degerlendirme-uzmanlari-dernegi-cumhurbaskani-tatar-tarafindan-kabul-edildi/982',
       type: 'meeting',
     },
     {
-      id: 'pa-3',
+      id: 'pa-kteb-calistay',
       date: '15 Mayıs 2024',
       title: {
         tr: 'KTEB Yönetim Kurulu Çalıştay ve Komisyon Dağılımı',
@@ -816,8 +846,8 @@ export const politicalProfile: PoliticalProfile = {
       },
       organization: 'Kıbrıs Türk Emlakçılar Birliği (KTEB)',
       summary: {
-        tr: 'Kıbrıs Türk Emlakçılar Birliği yönetiminde sektörel etik ilkeleri, mesleki akreditasyon ve kayıt dışı aracılıkla mücadele komisyonlarında aktif rol üstlenildi.',
-        en: 'Led key committees within KTEB executive management focusing on professional ethics, broker accreditation, and countering unregistered practices.',
+        tr: 'Kıbrıs Türk Emlakçılar Birliği yönetiminde sektörel etik ilkeleri, mesleki akreditasyon ve kayıt dışı aracılıkla mücadele komisyonlarında aktif görev dağılımı gerçekleştirildi.',
+        en: 'Active governance allocations within KTEB executive management focusing on professional ethics, broker accreditation, and countering informality.',
       },
       sourceUrl: 'https://kteb.org',
       type: 'meeting',
@@ -1227,6 +1257,99 @@ export const featuredContributions: Contribution[] = [
 
 export const pressItems: PressItem[] = [
   {
+    id: 'p-kanalt-siyaset',
+    date: '23 Ekim 2026',
+    category: 'video',
+    publication: 'Kanal T Kıbrıs',
+    headline: {
+      tr: 'Kanal T — Siyaset ve Kadın: TAM Parti Girne Milletvekili Adayı Emine İkiz Leblebicioğlu',
+      en: 'Kanal T — Politics & Women: TAM Party Kyrenia Parliamentary Candidate Emine İkiz Leblebicioğlu'
+    },
+    summary: {
+      tr: 'Kanal T ekranlarında yayınlanan Siyaset ve Kadın programına canlı yayın konuğu olan Emine İkiz Leblebicioğlu; kadının siyasetteki dönüştürücü rolü, toplumsal adalet mücadelesi, Girne’nin öncelikli sorunları ve sürdürülebilir kalkınma vizyonunu aktardı.',
+      en: 'Featured as a live guest on Kanal T’s "Politics and Women", Emine İkiz Leblebicioğlu shared her civic vision focusing on female leadership in governance, social justice, Kyrenia’s infrastructure challenges, and community development.'
+    },
+    verificationStatus: 'verified',
+    sourceUrl: 'https://www.youtube.com/live/27Qpz0ipjqw?si=AC0yneRsVy0WN9K-',
+    videoUrl: 'https://www.youtube.com/watch?v=27Qpz0ipjqw',
+    videoId: '27Qpz0ipjqw',
+    mediaType: 'video',
+    thumbnailUrl: 'https://i.ytimg.com/vi/27Qpz0ipjqw/hqdefault.jpg',
+    tag: {
+      tr: 'Canlı Yayın · Siyaset ve Kadın',
+      en: 'Live Broadcast · Politics & Women'
+    }
+  },
+  {
+    id: 'p-kibristv-gunortasi',
+    date: 'Kıbrıs TV Canlı Yayın',
+    category: 'video',
+    publication: 'Kıbrıs TV',
+    headline: {
+      tr: 'Kıbrıs TV — Gün Ortası: Taşınmaz Değerleme Standartları ve Ada Ekonomisi',
+      en: 'Kıbrıs TV — Gün Ortası: Property Valuation Standards & Island Economy'
+    },
+    summary: {
+      tr: 'Kıbrıs TV Gün Ortası canlı yayınında Emine İkiz Leblebicioğlu; gayrimenkul piyasasında güven telkin eden bilimsel değerleme esaslarını, lisanslı ekspertiz mekanizmasını ve Kuzey Kıbrıs ekonomisinin güncel dinamiklerini kapsamlı şekilde tahlil etti.',
+      en: 'Live on Kıbrıs TV’s Gün Ortası, Emine İkiz Leblebicioğlu analyzed objective appraisal benchmarks, certified real estate valuation mechanisms, and Northern Cyprus’s macroeconomic landscape.'
+    },
+    verificationStatus: 'verified',
+    sourceUrl: 'https://www.youtube.com/live/x2ZZBaJbvZE?si=Wdo8kQT8lopC12KH',
+    videoUrl: 'https://www.youtube.com/watch?v=x2ZZBaJbvZE',
+    videoId: 'x2ZZBaJbvZE',
+    mediaType: 'video',
+    thumbnailUrl: 'https://i.ytimg.com/vi/x2ZZBaJbvZE/hqdefault.jpg',
+    tag: {
+      tr: 'Canlı Yayın · Gün Ortası',
+      en: 'Live Broadcast · Gün Ortası'
+    }
+  },
+  {
+    id: 'p-kibristv-detay',
+    date: '27 Nisan 2023',
+    category: 'video',
+    publication: 'Kıbrıs TV',
+    headline: {
+      tr: 'Kıbrıs TV — Detay: Taşınmaz Mal Değerlendirmede Bilimsel Kriterler ve Mülkiyet Güvencesi',
+      en: 'Kıbrıs TV — Detay: Scientific Valuation Criteria and Title Deed Security'
+    },
+    summary: {
+      tr: 'Kıbrıs TV ekranlarında yayınlanan Detay programına katılan Kıbrıs Türk Taşınmaz Mal Değerlendirme Uzmanları Derneği Yönetim Kurulu Üyesi Emine Leblebicioğlu; mülk değer tespitinde bilimsel parametreler, bağımsız ekspertiz ve alıcı haklarının güvence altına alınması üzerine konuştu.',
+      en: 'Featured on Kıbrıs TV’s Detay program, Valuation Experts Association Board Member Emine Leblebicioğlu detailed scientific valuation metrics, independent appraisal practices, and protecting buyer rights.'
+    },
+    verificationStatus: 'verified',
+    sourceUrl: 'https://youtu.be/6HDlphK8rrM?si=4EwFR9C-IW9qmqwH',
+    videoUrl: 'https://www.youtube.com/watch?v=6HDlphK8rrM',
+    videoId: '6HDlphK8rrM',
+    mediaType: 'video',
+    thumbnailUrl: 'https://i.ytimg.com/vi/6HDlphK8rrM/hqdefault.jpg',
+    tag: {
+      tr: 'TV Programı · Detay',
+      en: 'TV Program · Detay'
+    }
+  },
+  {
+    id: 'p-dovizhaberleri',
+    date: '30 Haziran 2022',
+    category: 'etkinlik',
+    publication: 'Döviz Haberleri',
+    headline: {
+      tr: 'Kıbrıs Türk Taşınmaz Mal Değerlendirme Uzmanları Derneği, Cumhurbaşkanı Tatar Tarafından Kabul Edildi',
+      en: 'Cyprus Turkish Real Estate Valuation Experts Association Received by President Tatar'
+    },
+    summary: {
+      tr: 'Cumhurbaşkanı Ersin Tatar; Ahmet Davman başkanlığındaki ve Emine İkiz Leblebicioğlu’nun yer aldığı Taşınmaz Mal Değerlendirme Uzmanları Derneği heyetini Cumhurbaşkanlığı’nda kabul etti. Heyet, gayrimenkul yasası ve değerleme standartlarının önemini paylaştı.',
+      en: 'President Ersin Tatar received the delegation of the Cyprus Turkish Real Estate Valuation Experts Association, including Emine İkiz Leblebicioğlu, discussing real estate statutory legislation and appraisal standards.'
+    },
+    verificationStatus: 'verified',
+    sourceUrl: 'https://www.dovizhaberleri.com/genel/kibris-turk-tasinmaz-mal-degerlendirme-uzmanlari-dernegi-cumhurbaskani-tatar-tarafindan-kabul-edildi/982',
+    mediaType: 'article',
+    tag: {
+      tr: 'Cumhurbaşkanlığı Kabulü',
+      en: 'Presidential Reception'
+    }
+  },
+  {
     id: 'p-0',
     date: '23 Ekim 2026',
     category: 'haber',
@@ -1241,6 +1364,7 @@ export const pressItems: PressItem[] = [
     },
     verificationStatus: 'verified',
     sourceUrl: 'https://bagimsiz.com',
+    mediaType: 'article',
     tag: {
       tr: 'Siyasi & Kamusal Açıklama',
       en: 'Civic & Political Statement'
@@ -1261,6 +1385,7 @@ export const pressItems: PressItem[] = [
     },
     verificationStatus: 'verified',
     sourceUrl: 'https://haberkibris.com/cumhurbaskani-tatar-kibris-turk-tasinmaz-mal-degerlendirme-uzmanlari-dernegini-kabul-etti-1840-2025-06-30.html',
+    mediaType: 'article',
     tag: {
       tr: 'Resmî Heyet Kabulü',
       en: 'Official Delegation'
@@ -1281,6 +1406,7 @@ export const pressItems: PressItem[] = [
     },
     verificationStatus: 'verified',
     sourceUrl: 'https://kteb.org',
+    mediaType: 'article',
     tag: {
       tr: 'Birlik Yönetimi',
       en: 'Union Administration'
@@ -1301,6 +1427,7 @@ export const pressItems: PressItem[] = [
     },
     verificationStatus: 'verified',
     sourceUrl: 'https://kibrisemlaksitesi.com',
+    mediaType: 'article',
     tag: {
       tr: 'Sektörel Değerlendirme',
       en: 'Sectoral Analysis'

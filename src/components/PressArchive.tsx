@@ -4,12 +4,11 @@ import React, { useState } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { pressItems } from '@/data/content';
 import { EditorialHeading } from './EditorialHeading';
-import { VerifiedBadge } from './VerifiedBadge';
-import { Newspaper, Calendar, ExternalLink } from 'lucide-react';
+import { Newspaper, Calendar, ExternalLink, Play, Film } from 'lucide-react';
 
 export const PressArchive: React.FC = () => {
   const { language } = useLanguage();
-  const [filter, setFilter] = useState<'all' | 'haber' | 'etkinlik' | 'aciklama'>('all');
+  const [filter, setFilter] = useState<'all' | 'video' | 'haber' | 'etkinlik' | 'aciklama'>('all');
 
   const filteredItems = pressItems.filter((item) => {
     if (filter === 'all') return true;
@@ -28,8 +27,8 @@ export const PressArchive: React.FC = () => {
             titleItalic={language === 'tr' ? 'Kamuoyunda.' : 'Public Record.'}
             description={
               language === 'tr'
-                ? 'Resmî kabul bildirimleri, meslek odası kararları ve basına yansıyan sektörel gelişmeler.'
-                : 'Verifiable press releases, union assembly notices, and official government delegations.'
+                ? 'Televizyon yayınları, canlı röportajlar, resmî kabul bildirimleri ve basına yansıyan sektörel gelişmeler.'
+                : 'Television broadcasts, live interviews, official reception notices, and verified press coverage.'
             }
           />
 
@@ -37,6 +36,7 @@ export const PressArchive: React.FC = () => {
           <div className="flex flex-wrap gap-2 pb-2">
             {[
               { id: 'all', tr: 'Tümü', en: 'All Records' },
+              { id: 'video', tr: 'TV & Video Yayınları', en: 'TV & Video Broadcasts' },
               { id: 'haber', tr: 'Haberler', en: 'News' },
               { id: 'etkinlik', tr: 'Etkinlikler & Kabuller', en: 'Receptions' },
               { id: 'aciklama', tr: 'Kurumsal Açıklamalar', en: 'Statements' },
@@ -56,28 +56,50 @@ export const PressArchive: React.FC = () => {
           </div>
         </div>
 
-        {/* Press Items Grid with Real Article Photography */}
+        {/* Press Items Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {filteredItems.map((item) => {
-            const hasRealPhoto = item.id === 'p-1';
+            const isVideo = item.mediaType === 'video' || !!item.videoId;
+            const hasPhoto = item.thumbnailUrl || (item.id === 'p-1' ? '/images/delegation-presidency-tatar.jpg' : null);
 
             return (
               <div
                 key={item.id}
-                className="bg-white p-8 border border-stoneGray/80 hover:border-bronze transition-all duration-300 shadow-sm flex flex-col justify-between"
+                className="bg-white p-8 border border-stoneGray/80 hover:border-bronze transition-all duration-300 shadow-sm flex flex-col justify-between group"
               >
                 <div>
-                  {/* Top Real Photo for Documented Reception */}
-                  {hasRealPhoto && (
+                  {/* Media Visual: Video Thumbnail or Press Photo */}
+                  {hasPhoto && (
                     <div className="mb-6 relative aspect-[16/9] overflow-hidden border border-stoneGray bg-stoneGray-light">
                       <img
-                        src="/images/delegation-presidency-tatar.jpg"
-                        alt="Cumhurbaşkanı Tatar, Taşınmaz Mal Değerlendirme Uzmanları Derneğini kabul etti"
-                        className="w-full h-full object-cover"
+                        src={hasPhoto}
+                        alt={item.headline[language]}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                       />
-                      <div className="absolute top-2 left-2 px-2 py-0.5 bg-black/75 backdrop-blur-sm text-white text-[10px] font-sans">
-                        Haber Kıbrıs Resmî Fotoğrafı · 30 Haziran 2025
-                      </div>
+                      
+                      {isVideo && item.sourceUrl && (
+                        <a
+                          href={item.sourceUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={language === 'tr' ? 'Yayını İzle' : 'Watch Broadcast'}
+                          className="absolute inset-0 bg-charcoal/30 flex items-center justify-center group-hover:bg-charcoal/40 transition-colors"
+                        >
+                          <div className="w-14 h-14 rounded-full bg-white/95 text-[#c4302b] flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110">
+                            <Play className="w-6 h-6 fill-current ml-0.5" />
+                          </div>
+                          <span className="absolute bottom-3 left-3 px-2.5 py-1 bg-charcoal/85 backdrop-blur-sm text-white text-[11px] font-sans font-medium flex items-center gap-1.5">
+                            <Film className="w-3 h-3 text-bronze" />
+                            {item.publication}
+                          </span>
+                        </a>
+                      )}
+
+                      {!isVideo && item.id === 'p-1' && (
+                        <div className="absolute top-2 left-2 px-2 py-0.5 bg-black/75 backdrop-blur-sm text-white text-[10px] font-sans">
+                          Haber Kıbrıs Resmî Fotoğrafı · 30 Haziran 2025
+                        </div>
+                      )}
                     </div>
                   )}
 
@@ -87,9 +109,10 @@ export const PressArchive: React.FC = () => {
                       <Calendar className="w-3.5 h-3.5 text-bronze" />
                       <span className="font-medium text-charcoal">{item.date}</span>
                       <span className="text-stoneGray">·</span>
-                      <span className="uppercase tracking-wider text-[11px]">{item.tag[language]}</span>
+                      <span className="uppercase tracking-wider text-[11px] text-bronze font-medium">
+                        {item.tag[language]}
+                      </span>
                     </div>
-                    <VerifiedBadge status={item.verificationStatus} />
                   </div>
 
                   {/* Source Publication */}
@@ -108,26 +131,36 @@ export const PressArchive: React.FC = () => {
                   </p>
                 </div>
 
-                {/* Footer with Outbound Link */}
+                {/* Footer with Outbound Link / Action */}
                 <div className="mt-8 pt-5 border-t border-stoneGray/40 flex items-center justify-between text-xs font-sans text-textGray">
                   <span className="flex items-center gap-1.5 text-charcoal/70">
-                    <Newspaper className="w-3.5 h-3.5 text-bronze" />
+                    {isVideo ? (
+                      <Film className="w-3.5 h-3.5 text-[#1B5B9E]" />
+                    ) : (
+                      <Newspaper className="w-3.5 h-3.5 text-bronze" />
+                    )}
                     <span>{item.publication}</span>
                   </span>
-                  {item.sourceUrl ? (
+                  
+                  {item.sourceUrl && (
                     <a
                       href={item.sourceUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-bronze hover:text-charcoal font-medium"
+                      className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded transition-all font-medium ${
+                        isVideo
+                          ? 'bg-[#c4302b]/10 text-[#c4302b] hover:bg-[#c4302b] hover:text-white'
+                          : 'text-bronze hover:text-charcoal'
+                      }`}
                     >
-                      <span>{language === 'tr' ? 'Habere Git' : 'Source Link'}</span>
+                      {isVideo && <Play className="w-3 h-3 fill-current" />}
+                      <span>
+                        {isVideo
+                          ? (language === 'tr' ? 'Yayını İzle' : 'Watch Broadcast')
+                          : (language === 'tr' ? 'Habere Git' : 'Source Link')}
+                      </span>
                       <ExternalLink className="w-3 h-3" />
                     </a>
-                  ) : (
-                    <span className="text-[11px] text-warmTaupe uppercase tracking-wider">
-                      REF: {item.id.toUpperCase()}
-                    </span>
                   )}
                 </div>
               </div>

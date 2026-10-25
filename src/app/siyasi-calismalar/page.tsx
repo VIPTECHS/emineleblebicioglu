@@ -20,7 +20,8 @@ import {
   TreePine,
   ShieldCheck,
   Tv,
-  Users
+  Users,
+  Play
 } from 'lucide-react';
 import { VerifiedBadge } from '@/components/VerifiedBadge';
 import { EditorialHeading } from '@/components/EditorialHeading';
@@ -426,9 +427,18 @@ export default function PoliticalPage() {
                     href={activity.sourceUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-3 border border-stoneGray/80 text-xs font-sans font-medium text-charcoal hover:bg-[#1B5B9E] hover:text-white hover:border-[#1B5B9E] transition-all flex-shrink-0"
+                    className={`inline-flex items-center gap-2 px-5 py-3 border text-xs font-sans font-medium transition-all flex-shrink-0 ${
+                      activity.type === 'broadcast'
+                        ? 'border-[#c4302b]/40 text-[#c4302b] bg-[#c4302b]/5 hover:bg-[#c4302b] hover:text-white hover:border-[#c4302b]'
+                        : 'border-stoneGray/80 text-charcoal hover:bg-[#1B5B9E] hover:text-white hover:border-[#1B5B9E]'
+                    }`}
                   >
-                    <span>{language === 'tr' ? 'Kaynağı Görüntüle' : 'View Source'}</span>
+                    {activity.type === 'broadcast' && <Play className="w-3.5 h-3.5 fill-current" />}
+                    <span>
+                      {activity.type === 'broadcast'
+                        ? (language === 'tr' ? 'Yayını İzle' : 'Watch Broadcast')
+                        : (language === 'tr' ? 'Kaynağı Görüntüle' : 'View Source')}
+                    </span>
                     <ExternalLink className="w-3.5 h-3.5" />
                   </a>
                 )}

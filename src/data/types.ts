@@ -126,12 +126,16 @@ export interface Contribution {
 export interface PressItem {
   id: string;
   date: string;
-  category: 'haber' | 'etkinlik' | 'aciklama';
+  category: 'haber' | 'etkinlik' | 'aciklama' | 'video' | 'yayin';
   publication: string;
   headline: Record<Language, string>;
   summary: Record<Language, string>;
   verificationStatus: VerificationStatus;
   sourceUrl?: string;
+  videoUrl?: string;
+  videoId?: string;
+  mediaType?: 'article' | 'video' | 'broadcast';
+  thumbnailUrl?: string;
   tag: Record<Language, string>;
 }
 
