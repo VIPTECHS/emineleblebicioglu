@@ -16,8 +16,8 @@ import { imageManifest } from './imageManifest';
 
 export const siteConfig = {
   name: 'Emine İkiz Leblebicioğlu',
-  titleTR: 'Emine İkiz Leblebicioğlu — Dijital Biyografi ve Profesyonel Portföy',
-  titleEN: 'Emine İkiz Leblebicioğlu — Digital Biography & Professional Portfolio',
+  titleTR: 'Emine İkiz Leblebicioğlu — TAM Parti Girne Milletvekili Adayı',
+  titleEN: 'Emine İkiz Leblebicioğlu — TAM Party Kyrenia Parliamentary Candidate',
   descriptorTR: 'PROFESYONEL VE TOPLUMSAL YOLCULUK · GİRNE',
   descriptorEN: 'PROFESSIONAL AND CIVIC JOURNEY · KYRENIA',
   heroTaglineTR: 'Bir İsmin Ardındaki Hikâye.',

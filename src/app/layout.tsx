@@ -5,31 +5,52 @@ import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Emine İkiz Leblebicioğlu — Dijital Biyografi ve Kişisel Portföy',
-  description:
-    "Emine İkiz Leblebicioğlu'nun konservatuvar eğitiminden kurumsal yönetime, insan kaynaklarından bilişim, gayrimenkul ve sivil toplum liderliğine uzanan profesyonel yolculuğu ve biyografisi.",
+  metadataBase: new URL('http://localhost:3000'),
+  title: 'Emine İkiz Leblebicioğlu — TAM Parti Girne Milletvekili Adayı',
+  description: 'TAM Parti Girne Milletvekili Adayı Emine İkiz Leblebicioğlu — Dijital Biyografi ve Kişisel Portföy.',
+  icons: {
+    icon: [
+      { url: '/emineleblebici.jpeg' },
+      { url: '/favicon.ico' },
+      { url: '/favicon.png', sizes: '64x64', type: 'image/png' },
+    ],
+    shortcut: ['/emineleblebici.jpeg'],
+    apple: [
+      { url: '/emineleblebici.jpeg' },
+      { url: '/apple-touch-icon.png' },
+    ],
+  },
   keywords: [
     'Emine İkiz Leblebicioğlu',
     'Emine Leblebicioğlu',
+    'TAM Parti Girne Milletvekili Adayı',
+    'TAM Parti',
+    'Girne Milletvekili Adayı',
     'İTÜ Türk Musikisi Devlet Konservatuvarı',
     'Yeditepe Üniversitesi',
     'Kıbrıs Türk Emlakçılar Birliği',
     'KTEB',
     'Kıbrıs Türk Taşınmaz Mal Değerlendirme Uzmanları Derneği',
-    'TAM Parti Girne',
     'Girne',
     'Lefkoşa',
     'Kuzey Kıbrıs',
-    'Kişisel Portföy',
   ],
   authors: [{ name: 'Emine İkiz Leblebicioğlu' }],
   openGraph: {
-    title: 'Emine İkiz Leblebicioğlu — Dijital Biyografi ve Kişisel Portföy',
-    description: 'Bir İsmin Ardındaki Hikâye. Eğitim, kurumsal yönetim, sivil toplum ve profesyonel portföy.',
+    title: 'Emine İkiz Leblebicioğlu — TAM Parti Girne Milletvekili Adayı',
+    description: 'TAM Parti Girne Milletvekili Adayı Emine İkiz Leblebicioğlu — Dijital Biyografi ve Kişisel Portföy.',
     type: 'profile',
     locale: 'tr_TR',
     alternateLocale: 'en_US',
     siteName: 'Emine İkiz Leblebicioğlu',
+    images: [
+      {
+        url: '/emineleblebici.jpeg',
+        width: 1530,
+        height: 2048,
+        alt: 'Emine İkiz Leblebicioğlu — TAM Parti Girne Milletvekili Adayı',
+      },
+    ],
   },
 };
 
@@ -78,6 +99,11 @@ export default function RootLayout({
 
   return (
     <html lang="tr">
+      <head>
+        <link rel="icon" type="image/jpeg" href="/emineleblebici.jpeg" />
+        <link rel="shortcut icon" href="/emineleblebici.jpeg" />
+        <link rel="apple-touch-icon" href="/emineleblebici.jpeg" />
+      </head>
       <body className="font-sans bg-ivory text-charcoal antialiased selection:bg-champagne selection:text-white">
         <script
           type="application/ld+json"
