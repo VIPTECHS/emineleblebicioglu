@@ -57,27 +57,20 @@ export const AffiliationsGrid: React.FC = () => {
                 </p>
               </div>
 
-              {/* Bottom Note & Action */}
-              <div className="mt-8 pt-6 border-t border-stoneGray/40 flex items-end justify-between gap-4">
-                <div className="text-[11px] text-warmTaupe-dark font-sans leading-normal max-w-xs">
-                  <span className="font-medium text-charcoal-700 block mb-0.5">
-                    {language === 'tr' ? 'Tescil & Belge Dayanağı:' : 'Archival Basis:'}
-                  </span>
-                  {item.sourceNote ? item.sourceNote[language] : ''}
-                </div>
-
-                {item.websiteUrl && (
+              {/* Action */}
+              {item.websiteUrl && (
+                <div className="mt-8 pt-6 border-t border-stoneGray/40 flex items-center justify-end">
                   <a
                     href={item.websiteUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-xs uppercase tracking-wider font-sans font-medium text-charcoal group-hover:text-champagne-dark transition-colors"
+                    className="inline-flex items-center gap-1.5 text-xs uppercase tracking-wider font-sans font-medium text-charcoal hover:text-bronze transition-colors"
                   >
-                    <span>{language === 'tr' ? 'Resmî Sayfa' : 'Official Page'}</span>
+                    <span>{language === 'tr' ? 'Resmî Web Sitesi' : 'Official Page'}</span>
                     <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </a>
-                )}
-              </div>
+                </div>
+              )}
 
               {/* Delicate line expand hover indicator */}
               <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-champagne-dark transition-all duration-300 group-hover:w-full" />

@@ -84,11 +84,6 @@ export const EducationSection: React.FC = () => {
                   {language === 'tr' ? edu.description.tr : edu.description.en}
                 </p>
               </div>
-
-              <div className="pt-6 mt-8 border-t border-stoneGray/40 flex items-center justify-between text-xs font-sans text-textGray">
-                <span>{language === 'tr' ? 'Kaynak Doğrulaması:' : 'Source:'}</span>
-                <span className="font-medium text-charcoal">{language === 'tr' ? edu.sourceLabel?.tr : edu.sourceLabel?.en}</span>
-              </div>
             </div>
           ))}
         </div>
@@ -133,14 +128,11 @@ export const EducationSection: React.FC = () => {
             ))}
           </div>
 
-          <div className="mt-8 pt-4 border-t border-stoneGray/40 text-[11px] text-textGray font-sans flex items-center justify-between">
+          <div className="mt-8 pt-4 border-t border-stoneGray/40 text-[11px] text-textGray font-sans">
             <span>
               {language === 'tr'
-                ? '* Bu alanlar üniversite diploması değil, profesyonel gelişim ve kurumsal eğitim konularını ifade eder.'
-                : '* These topics represent professional development competencies rather than academic degree titles.'}
-            </span>
-            <span className="font-medium text-charcoal">
-              {language === 'tr' ? 'Biyografi Beyanı' : 'Owner-Provided'}
+                ? '* Profesyonel gelişim ve kurumsal eğitim konularını ifade eder.'
+                : '* Represents professional development and corporate training focus areas.'}
             </span>
           </div>
         </div>

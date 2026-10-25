@@ -124,8 +124,8 @@ export const FeaturedContributions: React.FC = () => {
                     <Layers className="w-3.5 h-3.5 text-bronze" />
                     <span>
                       {language === 'tr'
-                        ? 'Editoryal Sektör İncelemesi · Doğrulanmış KKTC Kamu Verisi'
-                        : 'Editorial Sector Dossier · Verified Northern Cyprus Record'}
+                        ? 'Editoryal Sektör İncelemesi'
+                        : 'Editorial Sector Dossier'}
                     </span>
                   </div>
                 </div>

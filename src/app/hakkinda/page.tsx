@@ -184,11 +184,6 @@ export default function AboutPage() {
                     {sec.content}
                   </p>
                 </div>
-
-                <div className="pt-5 mt-6 border-t border-stoneGray/30 flex items-center justify-between text-xs font-sans text-textGray">
-                  <span>{language === 'tr' ? 'Doğrulanmış Biyografi Verisi' : 'Verified Biographical Record'}</span>
-                  <VerifiedBadge status="owner_provided" />
-                </div>
               </div>
             ))}
           </div>

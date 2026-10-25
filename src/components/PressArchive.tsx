@@ -108,13 +108,11 @@ export const PressArchive: React.FC = () => {
                   </p>
                 </div>
 
-                {/* Footer with Outbound Verifiable Link */}
+                {/* Footer with Outbound Link */}
                 <div className="mt-8 pt-5 border-t border-stoneGray/40 flex items-center justify-between text-xs font-sans text-textGray">
-                  <span className="flex items-center gap-1.5">
+                  <span className="flex items-center gap-1.5 text-charcoal/70">
                     <Newspaper className="w-3.5 h-3.5 text-bronze" />
-                    <span>
-                      {language === 'tr' ? 'Doğrulanmış Resmî Kayıt' : 'Verified Public Record'}
-                    </span>
+                    <span>{item.publication}</span>
                   </span>
                   {item.sourceUrl ? (
                     <a

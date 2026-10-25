@@ -115,15 +115,6 @@ export const MusicAndSocialImpact: React.FC = () => {
                 </p>
 
               </div>
-
-              {/* Footer Source Note */}
-              <div className="pt-6 mt-8 border-t border-stoneGray/40 flex items-center justify-between text-xs font-sans text-textGray">
-                <span>{language === 'tr' ? 'Kayıt Türü:' : 'Record Type:'}</span>
-                <span className="font-medium text-charcoal">
-                  {language === 'tr' ? item.sourceLabel?.tr : item.sourceLabel?.en}
-                </span>
-              </div>
-
             </div>
           ))}
         </div>

@@ -166,8 +166,8 @@ export const PoliticalAndPublicSection: React.FC = () => {
             <div className="text-xs text-textGray font-sans">
               <p>
                 {language === 'tr'
-                  ? '* Belirtilen başlıklar biyografik beyan ve kamu yararı vizyonudur; seçim vaadi veya bağlayıcı mevzuat metni teşkil etmez.'
-                  : '* Stated topics reflect biographical vision and public interest; presented without partisan campaign slogans.'}
+                  ? 'Kuzey Kıbrıs’ın sürdürülebilir kalkınması ve toplumsal refahı için belirlenen öncelikli çalışma sahaları.'
+                  : 'Priority domains formulated for the sustainable development and civic progress of Northern Cyprus.'}
               </p>
             </div>
             <Link

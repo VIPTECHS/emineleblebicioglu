@@ -202,14 +202,6 @@ export const BiographyIntro: React.FC = () => {
                 </span>
               </div>
             </div>
-
-            {/* Verification Citation Banner */}
-            <div className="mt-6 p-4 bg-[#FAF8F4] border-l-2 border-bronze text-xs text-charcoal/70 font-sans shadow-sm">
-              <span className="font-semibold block text-charcoal-800 mb-0.5">
-                {language === 'tr' ? 'Editoryal Güvence & Şeffaflık:' : 'Editorial Assurance & Transparency:'}
-              </span>
-              {language === 'tr' ? biographyContent.disclaimerTR : biographyContent.disclaimerEN}
-            </div>
           </div>
 
         </div>

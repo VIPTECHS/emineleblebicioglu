@@ -75,13 +75,6 @@ export default function EducationAndContributionsPage() {
                     {language === 'tr' ? edu.description.tr : edu.description.en}
                   </p>
                 </div>
-
-                <div className="pt-6 mt-8 border-t border-stoneGray/40 flex items-center justify-between text-xs font-sans text-textGray">
-                  <span>{language === 'tr' ? 'Kayıt Kaynağı:' : 'Source Record:'}</span>
-                  <span className="font-medium text-charcoal">
-                    {language === 'tr' ? edu.sourceLabel?.tr : edu.sourceLabel?.en}
-                  </span>
-                </div>
               </div>
             ))}
           </div>
@@ -132,13 +125,6 @@ export default function EducationAndContributionsPage() {
                   <p className="text-sm font-sans text-charcoal/75 leading-relaxed">
                     {language === 'tr' ? item.description.tr : item.description.en}
                   </p>
-                </div>
-
-                <div className="pt-5 mt-6 border-t border-stoneGray/30 flex items-center justify-between text-xs font-sans text-textGray">
-                  <span>{language === 'tr' ? 'Kayıt Türü:' : 'Record Type:'}</span>
-                  <span className="font-medium text-charcoal">
-                    {language === 'tr' ? item.sourceLabel?.tr : item.sourceLabel?.en}
-                  </span>
                 </div>
               </div>
             ))}

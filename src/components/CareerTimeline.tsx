@@ -131,15 +131,9 @@ export const CareerTimeline: React.FC = () => {
                   </ul>
                 </div>
 
-                {/* Footer Source Note */}
-                <div className="mt-6 pt-4 border-t border-stoneGray/30 flex items-center justify-between text-[11px] text-textGray font-sans">
-                  <span>
-                    {language === 'tr' ? 'Kayıt Türü: ' : 'Registry Type: '}
-                    <strong className="text-charcoal font-medium">
-                      {language === 'tr' ? pos.sourceLabel?.tr : pos.sourceLabel?.en}
-                    </strong>
-                  </span>
-                  <span className="text-stoneGray">#0{idx + 1}</span>
+                {/* Card Index */}
+                <div className="mt-6 pt-4 border-t border-stoneGray/30 flex items-center justify-end text-[11px] text-stoneGray font-sans">
+                  <span>#0{idx + 1}</span>
                 </div>
 
               </div>

@@ -390,7 +390,7 @@ export default function PoliticalPage() {
               </span>
             </div>
             <span className="text-xs text-textGray font-sans">
-              {language === 'tr' ? 'Doğrulanmış Kayıtlar' : 'Verified Chronology'}
+              {language === 'tr' ? 'Kronoloji' : 'Chronology'}
             </span>
           </div>
 
