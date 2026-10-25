@@ -28,7 +28,7 @@ export const siteConfig = {
   primaryActionEN: 'EXPLORE HER STORY',
   secondaryActionTR: 'SİYASİ ÇALIŞMALARI İNCELEYİN',
   secondaryActionEN: 'EXPLORE POLITICAL & CIVIC WORK',
-  contactEmail: 'iletisim@emineleblebicioglu.com',
+  contactEmail: 'emine@kibrisemlaksitesi.com',
   officialLocation: 'Girne / Lefkoşa, Kuzey Kıbrıs',
 };
 

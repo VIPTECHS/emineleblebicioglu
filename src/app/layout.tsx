@@ -94,6 +94,7 @@ export default function RootLayout({
       addressLocality: 'Girne / Lefkoşa',
       addressCountry: 'Kuzey Kıbrıs Türk Cumhuriyeti',
     },
+    email: 'emine@kibrisemlaksitesi.com',
     url: 'https://emineleblebicioglu.com',
   };
 
