@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pinyon+Script&family=Alex+Brush&family=Allura&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Manrope:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+    --font-manrope: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-script: 'Great Vibes', 'Pinyon Script', 'Alex Brush', cursive, sans-serif;
+    --font-calligraphy: 'Great Vibes', 'Pinyon Script', 'Alex Brush', cursive;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #F6F2EB;
+    color: #20201E;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: #A88965;
+    color: #FFFFFF;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F6F2EB;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #DCD6CB;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #A88965;
+  }
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+.font-calligraphy {
+  font-family: var(--font-calligraphy);
+}
