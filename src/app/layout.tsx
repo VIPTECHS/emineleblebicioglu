@@ -1,9 +1,20 @@
 import type { Metadata } from 'next';
+import { Cormorant_Garamond, Manrope, Great_Vibes } from 'next/font/google';
 import './globals.css';
 import { LanguageProvider } from '@/context/LanguageContext';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { SITE_URL } from '@/lib/seo';
+
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin', 'latin-ext'],
+  weight: ['300', '400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  variable: '--nf-cormorant',
+  display: 'swap',
+});
+const manrope = Manrope({ subsets: ['latin', 'latin-ext'], variable: '--nf-manrope', display: 'swap' });
+const greatVibes = Great_Vibes({ subsets: ['latin', 'latin-ext'], weight: '400', variable: '--nf-greatvibes', display: 'swap' });
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -126,7 +137,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="tr">
+    <html lang="tr" className={`${cormorant.variable} ${manrope.variable} ${greatVibes.variable}`}>
       <head>
         <link rel="icon" type="image/jpeg" href="/emineleblebici.jpeg" />
         <link rel="shortcut icon" href="/emineleblebici.jpeg" />

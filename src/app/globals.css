@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pinyon+Script&family=Alex+Brush&family=Allura&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Manrope:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,10 +5,10 @@
 
 @layer base {
   :root {
-    --font-cormorant: 'Cormorant Garamond', Georgia, serif;
-    --font-manrope: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --font-script: 'Great Vibes', 'Pinyon Script', 'Alex Brush', cursive, sans-serif;
-    --font-calligraphy: 'Great Vibes', 'Pinyon Script', 'Alex Brush', cursive;
+    --font-cormorant: var(--nf-cormorant), Georgia, serif;
+    --font-manrope: var(--nf-manrope), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-script: var(--nf-greatvibes), cursive, sans-serif;
+    --font-calligraphy: var(--nf-greatvibes), cursive;
   }
 
   html {

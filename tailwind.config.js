@@ -52,10 +52,10 @@ module.exports = {
         },
       },
       fontFamily: {
-        serif: ['"Cormorant Garamond"', 'Playfair Display', 'Georgia', 'serif'],
-        sans: ['Manrope', 'DM Sans', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-        script: ['"Great Vibes"', '"Pinyon Script"', '"Alex Brush"', 'cursive', 'sans-serif'],
-        calligraphy: ['"Great Vibes"', '"Pinyon Script"', '"Alex Brush"', 'cursive'],
+        serif: ['var(--nf-cormorant)', 'Playfair Display', 'Georgia', 'serif'],
+        sans: ['var(--nf-manrope)', 'DM Sans', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        script: ['var(--nf-greatvibes)', 'cursive', 'sans-serif'],
+        calligraphy: ['var(--nf-greatvibes)', 'cursive'],
       },
       letterSpacing: {
         'widest-editorial': '0.22em',
