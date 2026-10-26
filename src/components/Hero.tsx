@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
 import { siteConfig } from '@/data/content';
 import { imageManifest } from '@/data/imageManifest';
@@ -67,9 +68,11 @@ export const Hero: React.FC = () => {
               {/* Prominent Political Identification Element — TAM Parti Affiliation & Candidacy */}
               <div className="mt-5 mb-2 inline-flex items-center gap-3.5 px-4 py-2.5 bg-white/95 border border-stoneGray/80 border-l-[3px] border-l-[#1B5B9E] shadow-[0_4px_16px_rgba(27,91,158,0.06)] max-w-fit">
                 <div className="w-8 h-8 rounded-full bg-[#1B5B9E]/10 p-1 flex items-center justify-center flex-shrink-0">
-                  <img
+                  <Image
                     src="/images/tam-parti-logo.png"
                     alt="TAM Parti Logosu"
+                    width={24}
+                    height={28}
                     className="w-full h-full object-contain"
                   />
                 </div>
@@ -131,10 +134,13 @@ export const Hero: React.FC = () => {
                 {/* 2. Main Portrait Container with Ivory Matting */}
                 <div className="relative z-10 bg-white p-2.5 sm:p-3 border border-stoneGray/80 shadow-[0_20px_50px_rgba(32,32,30,0.08)]">
                   <div className="relative aspect-[3/4] overflow-hidden bg-[#FAF8F4]">
-                    <img
+                    <Image
                       src={imageManifest.portrait.localPath}
                       alt={imageManifest.portrait.altText}
-                      className="w-full h-full object-cover object-[center_15%]"
+                      fill
+                      priority
+                      sizes="(min-width: 1024px) 460px, 90vw"
+                      className="object-cover object-[center_15%]"
                     />
                   </div>
                 </div>
@@ -149,11 +155,15 @@ export const Hero: React.FC = () => {
                   className="absolute -left-4 sm:-left-8 bottom-[-18px] sm:bottom-[-24px] z-20 w-24 sm:w-32 aspect-[3/4] p-1.5 bg-white border border-stoneGray shadow-[0_12px_30px_rgba(0,0,0,0.12)]"
                   title="Bellapais Manastırı Gotik Çan Kulesi, Beylerbeyi / Girne"
                 >
-                  <img
-                    src={imageManifest.towerThumbnail.localPath}
-                    alt={imageManifest.towerThumbnail.altText}
-                    className="w-full h-full object-cover"
-                  />
+                  <div className="relative w-full h-full">
+                    <Image
+                      src={imageManifest.towerThumbnail.localPath}
+                      alt={imageManifest.towerThumbnail.altText}
+                      fill
+                      sizes="128px"
+                      className="object-cover"
+                    />
+                  </div>
                 </div>
 
                 {/* 5. Overlapping Handwritten Quote Card (Bottom-Right Corner) */}
