@@ -3,11 +3,18 @@ import './globals.css';
 import { LanguageProvider } from '@/context/LanguageContext';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
+import { SITE_URL } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('http://localhost:3000'),
-  title: 'Emine İkiz Leblebicioğlu — TAM Parti Girne Milletvekili Adayı',
-  description: 'TAM Parti Girne Milletvekili Adayı Emine İkiz Leblebicioğlu — Dijital Biyografi ve Kişisel Portföy.',
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: 'Emine Leblebicioğlu — TAM Parti Girne Milletvekili Aday Adayı',
+    template: '%s | Emine İkiz Leblebicioğlu',
+  },
+  description: 'Emine İkiz Leblebicioğlu’nun resmî web sitesi. TAM Parti Girne milletvekili aday adayı, KTEB yönetim kurulu üyesi; biyografi, siyasi vizyon, kariyer ve basın arşivi.',
+  alternates: { canonical: '/' },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 } },
+  twitter: { card: 'summary_large_image' },
   icons: {
     icon: [
       { url: '/emineleblebici.jpeg' },
@@ -24,6 +31,9 @@ export const metadata: Metadata = {
     'Emine İkiz Leblebicioğlu',
     'Emine Leblebicioğlu',
     'TAM Parti Girne Milletvekili Adayı',
+    'TAM Parti Girne Milletvekili Aday Adayı',
+    'Toplumsal Adalet ve Mücadele Partisi',
+    'Emine Leblebicioglu',
     'TAM Parti',
     'Girne Milletvekili Adayı',
     'İTÜ Türk Musikisi Devlet Konservatuvarı',
@@ -38,19 +48,12 @@ export const metadata: Metadata = {
   authors: [{ name: 'Emine İkiz Leblebicioğlu' }],
   openGraph: {
     title: 'Emine İkiz Leblebicioğlu — TAM Parti Girne Milletvekili Adayı',
-    description: 'TAM Parti Girne Milletvekili Adayı Emine İkiz Leblebicioğlu — Dijital Biyografi ve Kişisel Portföy.',
+    description: 'Emine İkiz Leblebicioğlu’nun resmî web sitesi. TAM Parti Girne milletvekili aday adayı; biyografi, siyasi vizyon ve basın arşivi.',
+    url: '/',
     type: 'profile',
     locale: 'tr_TR',
     alternateLocale: 'en_US',
     siteName: 'Emine İkiz Leblebicioğlu',
-    images: [
-      {
-        url: '/emineleblebici.jpeg',
-        width: 1530,
-        height: 2048,
-        alt: 'Emine İkiz Leblebicioğlu — TAM Parti Girne Milletvekili Adayı',
-      },
-    ],
   },
 };
 
@@ -59,43 +62,67 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const personId = `${SITE_URL}/#person`;
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Person',
-    name: 'Emine İkiz Leblebicioğlu',
-    birthDate: '1980-01-25',
-    birthPlace: {
-      '@type': 'Place',
-      name: 'Hatay, Türkiye',
-    },
-    alumniOf: [
+    '@graph': [
       {
-        '@type': 'CollegeOrUniversity',
-        name: 'İstanbul Teknik Üniversitesi Türk Musikisi Devlet Konservatuvarı',
+        '@type': 'Person',
+        '@id': personId,
+        name: 'Emine İkiz Leblebicioğlu',
+        alternateName: ['Emine Leblebicioğlu', 'Emine Leblebicioglu', 'Emine İkiz'],
+        description: 'TAM Parti (Toplumsal Adalet ve Mücadele Partisi) Girne milletvekili aday adayı; Kıbrıs Türk Emlakçılar Birliği yönetim kurulu üyesi.',
+        image: `${SITE_URL}/emineleblebici.jpeg`,
+        url: SITE_URL,
+        gender: 'Female',
+        birthDate: '1980-01-25',
+        birthPlace: { '@type': 'Place', name: 'Hatay, Türkiye' },
+        nationality: 'Kuzey Kıbrıs Türk Cumhuriyeti',
+        knowsLanguage: ['tr', 'en'],
+        alumniOf: [
+          { '@type': 'CollegeOrUniversity', name: 'İstanbul Teknik Üniversitesi Türk Musikisi Devlet Konservatuvarı' },
+          { '@type': 'CollegeOrUniversity', name: 'Yeditepe Üniversitesi' },
+        ],
+        jobTitle: 'TAM Parti Girne Milletvekili Aday Adayı',
+        affiliation: {
+          '@type': 'PoliticalParty',
+          name: 'TAM Parti',
+          alternateName: 'Toplumsal Adalet ve Mücadele Partisi',
+          url: 'https://tamparti.org/',
+        },
+        memberOf: [
+          { '@type': 'Organization', name: 'Kıbrıs Türk Emlakçılar Birliği (KTEB)', url: 'https://kteb.org' },
+          { '@type': 'Organization', name: 'Kıbrıs Türk Taşınmaz Mal Değerlendirme Uzmanları Derneği' },
+        ],
+        worksFor: { '@type': 'Organization', name: 'Kıbrıs Emlak Sitesi', url: 'https://kibrisemlaksitesi.com' },
+        homeLocation: { '@type': 'Place', name: 'Girne, Kuzey Kıbrıs' },
+        address: { '@type': 'PostalAddress', addressLocality: 'Girne', addressCountry: 'CY' },
+        email: 'emine@kibrisemlaksitesi.com',
+        subjectOf: [
+          { '@type': 'VideoObject', name: 'Kanal T yayını', url: 'https://www.youtube.com/watch?v=27Qpz0ipjqw' },
+          { '@type': 'VideoObject', name: 'Kıbrıs TV yayını', url: 'https://www.youtube.com/watch?v=x2ZZBaJbvZE' },
+          { '@type': 'NewsArticle', name: 'Cumhurbaşkanı Tatar, Kıbrıs Türk Taşınmaz Mal Değerlendirme Uzmanları Derneği’ni kabul etti', url: 'https://haberkibris.com/cumhurbaskani-tatar-kibris-turk-tasinmaz-mal-degerlendirme-uzmanlari-dernegini-kabul-etti-1840-2025-06-30.html' },
+        ],
+        // Sosyal medya profilleri eklendiğinde buraya:
+        sameAs: [],
       },
       {
-        '@type': 'CollegeOrUniversity',
-        name: 'Yeditepe Üniversitesi',
+        '@type': 'WebSite',
+        '@id': `${SITE_URL}/#website`,
+        url: SITE_URL,
+        name: 'Emine İkiz Leblebicioğlu',
+        inLanguage: 'tr-TR',
+        publisher: { '@id': personId },
+      },
+      {
+        '@type': 'ProfilePage',
+        '@id': `${SITE_URL}/#profilepage`,
+        url: SITE_URL,
+        name: 'Emine İkiz Leblebicioğlu — Resmî Web Sitesi',
+        mainEntity: { '@id': personId },
+        isPartOf: { '@id': `${SITE_URL}/#website` },
       },
     ],
-    jobTitle: 'Yönetici, Danışman & Sivil Toplum Temsilcisi',
-    worksFor: [
-      {
-        '@type': 'Organization',
-        name: 'Kıbrıs Türk Emlakçılar Birliği (KTEB)',
-      },
-      {
-        '@type': 'Organization',
-        name: 'Kıbrıs Türk Taşınmaz Mal Değerlendirme Uzmanları Derneği',
-      },
-    ],
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Girne / Lefkoşa',
-      addressCountry: 'Kuzey Kıbrıs Türk Cumhuriyeti',
-    },
-    email: 'emine@kibrisemlaksitesi.com',
-    url: 'https://emineleblebicioglu.com',
   };
 
   return (

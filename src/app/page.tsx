@@ -12,6 +12,7 @@ import { PressArchive } from '@/components/PressArchive';
 import { PhotoJournal } from '@/components/PhotoJournal';
 import { ValuesSection } from '@/components/ValuesSection';
 import { ContactSection } from '@/components/ContactSection';
+import { FaqSection } from '@/components/FaqSection';
 
 export default function HomePage() {
   return (
@@ -48,6 +49,9 @@ export default function HomePage() {
 
       {/* Temel Değerler */}
       <ValuesSection />
+
+      {/* Sıkça Sorulan Sorular (SEO / AEO) */}
+      <FaqSection />
 
       {/* SECTION 09 — İletişim */}
       <ContactSection />
